@@ -12,7 +12,7 @@ body {
 }
 
 
-/* header: navbar */
+
 
 /* header: navbar */
 
@@ -386,11 +386,13 @@ form button {
 
     /* banner img */
 
-        .banner-img {
-            max-width: 100px;
-            height: 50%;
-            width: 50%;
-        }
+
+    .banner-img {
+         max-width: 100px;
+         height: 50%;
+        width: 50%;
+     }
+
 
     /* games */
 
@@ -400,6 +402,7 @@ form button {
         gap: 20px;
     }
 
+
     .column img {
         width: 100%;
         max-width: 350px;
@@ -408,6 +411,8 @@ form button {
     .column h2 {
         font-size: 2rem;
     }
+
+
 
     /*DISCOVER*/
 
@@ -479,6 +484,7 @@ form button {
 
    .bs h1 {
     font-size: 1.8rem;
+    
    }
 
    .container img {
