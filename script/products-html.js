@@ -10,14 +10,42 @@ products.forEach((product) => {
         </a>
         <h4>${product.name}</h4>
         <p>$${(product.priceCents / 100).toFixed(2)}</p>
-        <a href="checkout.html"> 
-            <button class="btn"><i class="fa-solid fa-cart-shopping"></i></button>
-            </a>
+         
+            <button class="btn js-add-to-cart"
+            data-product-id="${product.id}" >
+            <i class="fa-solid fa-cart-shopping"></i>
+            </button>
+            
     </div>
     `;
     
 });
 
-console.log(productsHTML);
-
 document.querySelector('.js-row-1').innerHTML = productsHTML;
+
+document.querySelectorAll('.js-add-to-cart')
+.forEach((button) => {
+    button.addEventListener('click', () => {
+        const productId = button.dataset.productId;
+
+        let matchingItem;
+        
+        cart.forEach((item) => {
+            if (productId === item.productId) {
+                matchingItem = item;
+            }
+        });
+
+        if (matchingItem) {
+            matchingItem.quantity += 1;
+        } else {
+            cart.push({
+                productId: productId,
+                quantity: 1
+            });
+        }
+
+        console.log(cart);
+        
+    });
+});
