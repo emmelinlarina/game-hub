@@ -1,4 +1,4 @@
-const products = [{
+export const products = [{
     id: 'game-001',
     image: 'images/games/spacewar.jpg',
     name: 'Space War',
