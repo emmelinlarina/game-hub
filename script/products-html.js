@@ -1,5 +1,6 @@
 import {cart, addToCart} from '../data/cart.js';
 import {products} from '../data/products.js';
+import {formatCurrency} from './utils/money.js';
 
 let productsHTML = '';
 
@@ -12,7 +13,7 @@ products.forEach((product) => {
         <a href="spacewar.html"> <img src="${product.image}" alt="a picture of the game ${product.name}">
         </a>
         <h4>${product.name}</h4>
-        <p>$${(product.priceCents / 100).toFixed(2)}</p>
+        <p>$${formatCurrency(product.priceCents)}</p>
          
             <button class="btn js-add-to-cart"
             data-product-id="${product.id}" >
