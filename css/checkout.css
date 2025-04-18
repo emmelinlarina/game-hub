@@ -164,7 +164,23 @@ hr {
 
 
 
-
+.empty-cart-message {
+    text-align: center;
+    padding: 2rem;
+    font-size: 1.2rem;
+    color: #f7f7f7;
+  }
+  
+  .empty-cart-message a {
+    text-decoration: underline;
+    color: #f7f7f7;
+  }
+  
+  .empty-total {
+    text-align: center;
+    color: #d1d1d1;
+    font-style: italic;
+  }
 
 
 

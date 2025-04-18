@@ -1,55 +1,81 @@
-import {cart, removeFromCart} from '../data/cart.js';
-import {products} from '../data/products.js';
-import {formatCurrency} from './utils/money.js';
-
-let cartSummaryHTML = '';
+import { cart, removeFromCart } from '../data/cart.js';
+import { products } from '../data/products.js';
+import { formatCurrency } from './utils/money.js';
 
 function renderCart() {
-    let cartSummaryHTML = '';
+  let cartSummaryHTML = '';
+
+  if (cart.length === 0) {
+    cartSummaryHTML = `
+      <div class="empty-cart-message">
+        <p>😢 It's empty in here...</p>
+        <p><a href="products.html">Browse games and fill it up 🎮</a></p>
+      </div>
+    `;
+  } else {
+    cart.forEach((cartItem) => {
+      const productId = cartItem.productId;
+      const matchingProduct = products.find((product) => product.id === productId);
+
+      cartSummaryHTML += `
+        <div class="box">
+          <div class="content">
+            <img src="${matchingProduct.image}" alt="Frontcover of ${matchingProduct.name}">
+            <h3>${matchingProduct.name}</h3>
+            <h4>$${formatCurrency(matchingProduct.priceCents)}</h4>
+            <span>
+              Quantity: <span class="quantity-label">${cartItem.quantity}</span>
+            </span>
+            <p class="btn-area">
+              <i class="fa-solid fa-trash"></i>
+              <span class="btn2 js-trash" data-product-id="${matchingProduct.id}">Remove</span>
+            </p>
+          </div>
+        </div>
+      `;
+    });
+  }
+
+  // Insert into cart area
+  document.querySelector('.js-shop').innerHTML = `
+    <h1>YOUR CART</h1>
+    ${cartSummaryHTML}
+  `;
+
+  // Update right bar subtotal + total
+  if (cart.length > 0) {
+    let subtotal = 0;
+
+    cart.forEach((cartItem) => {
+      const product = products.find((p) => p.id === cartItem.productId);
+      subtotal += product.priceCents * cartItem.quantity;
+    });
+
+    const totalFormatted = formatCurrency(subtotal);
+
+    document.querySelector('.right-bar').innerHTML = `
+      <p><span>Subtotal</span> <span>$${totalFormatted}</span></p>
+      <hr>
+      <p class="total"><span>TOTAL</span> <span>$${totalFormatted}</span></p>
+    `;
+  } else {
+    document.querySelector('.right-bar').innerHTML = `
+      <p class="empty-total">No items to total 💸</p>
+    `;
+  }
+
+  setupDeleteButtons();
 }
 
-cart.forEach((cartItem) => {
-    const productId = cartItem.productId;
-
-    let matchingProduct;
-
-    products.forEach((product) => {
-    if (product.id === productId) {
-        matchingProduct = product;
-    }
+function setupDeleteButtons() {
+  document.querySelectorAll('.js-trash').forEach((button) => {
+    button.addEventListener('click', () => {
+      const productId = button.dataset.productId;
+      removeFromCart(productId);
+      renderCart(); // Refresh after removing
     });
+  });
+}
 
-    
-    cartSummaryHTML += `
-
-        <div class="box">
-                <div class="content">
-                <img src="${matchingProduct.image}" alt="Frontcover of ${matchingProduct.image}">
-                    <h3>${matchingProduct.name}</h3>
-                    <h4>${formatCurrency(matchingProduct.priceCents)}</h4>
-                    <span>
-                        Quantity: <span class="quantity-label">${cartItem.quantity}</span>
-                    </span>
-                    <p class="btn-area" >
-                        <i class="fa-solid fa-trash" ></i>
-                        <span class="btn2 js-trash" data-product-id="${matchingProduct.id}">Remove</span>
-                    </p>
-                </div>
-        </div>
-    `;
-});
-
-document.querySelector('.js-shop').innerHTML = cartSummaryHTML;
-
-document.querySelectorAll('.js-trash').forEach((link) => {
-        link.addEventListener('click', () => {
-        const productId = link.dataset.productId;
-        removeFromCart(productId);
-        console.log(cart);
-        renderCart();
-        
-        });
-    });
-
-
+// Call function on page load
 renderCart();
