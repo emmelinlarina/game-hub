@@ -56,7 +56,7 @@ function renderCart() {
     <p class="total"><span>TOTAL</span> <span>${subtotalFormatted}</span></p>
   `;
 
-  setupDeleteButtons(); // 🗑 Activate remove button click handlers
+  setupDeleteButtons(); 
 }
 
 function setupDeleteButtons() {
@@ -64,22 +64,22 @@ function setupDeleteButtons() {
     link.addEventListener('click', () => {
       const productId = link.dataset.productId;
 
-      // Remove from cart array
+      
       removeFromCart(productId);
 
-      // Remove the product's container from DOM
+      
       const container = document.querySelector(`.js-cart-item-container-${productId}`);
       if (container) container.remove();
 
-      // Log the product removed
+      
       const product = products.find((p) => p.id === productId);
       console.log(`Removed: ${product.name}`);
 
-      // Re-render totals and empty message if needed
+      
       renderCart();
     });
   });
 }
 
-// Initial render
+
 renderCart();
