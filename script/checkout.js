@@ -36,13 +36,13 @@ function renderCart() {
     });
   }
 
-  // Insert into cart area
+  // 🛒 Display everything in cart section
   document.querySelector('.js-shop').innerHTML = `
     <h1>YOUR CART</h1>
     ${cartSummaryHTML}
   `;
 
-  // Update right bar subtotal + total
+  // 💸 Update right side totals
   if (cart.length > 0) {
     let subtotal = 0;
 
@@ -64,6 +64,7 @@ function renderCart() {
     `;
   }
 
+  // 🧹 Activate "Remove" buttons
   setupDeleteButtons();
 }
 
@@ -72,10 +73,10 @@ function setupDeleteButtons() {
     button.addEventListener('click', () => {
       const productId = button.dataset.productId;
       removeFromCart(productId);
-      renderCart(); // Refresh after removing
+      renderCart(); // Refresh cart visually
     });
   });
 }
 
-// Call function on page load
+// 🧠 Load cart on page open
 renderCart();
