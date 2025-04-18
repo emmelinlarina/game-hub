@@ -1,12 +1,14 @@
 export let cart = JSON.parse(localStorage.getItem('cart'));
 
 if (!cart) {
-  cart = []; // start with an empty cart
+  cart = []; 
 }
 
 function saveToStorage() {
   localStorage.setItem('cart', JSON.stringify(cart));
 }
+
+
 
 export function addToCart(productId) {
   let matchingItem;
@@ -26,7 +28,7 @@ export function addToCart(productId) {
     });
   }
 
-  saveToStorage(); // ✅ Save every time you change the cart
+  saveToStorage(); 
 }
 
 export function removeFromCart(productId) {
@@ -40,5 +42,5 @@ export function removeFromCart(productId) {
 
   cart = newCart;
 
-  saveToStorage(); // ✅ Save updated cart
+  saveToStorage(); 
 }
