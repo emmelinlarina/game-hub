@@ -33,7 +33,14 @@ function setupAddToCartButtons() {
     .forEach((button) => {
       button.addEventListener('click', () => {
         const productId = button.dataset.productId;
-        addToCart(productId);
+        const product = allListings.find(p => p.id === productId);
+        console.log('Clicked ID:', productId);
+        console.log('Matched Product:', product);
+        if (!product) {
+          console.error('Product not found for ID:', productId);
+          return;
+        }
+        addToCart(product);
         updateCartQuantity();
       });
     });
@@ -71,7 +78,7 @@ document.querySelector('#reset-filters').addEventListener('click', () => {
   document.querySelector('#sort-price').value = 'default';
   document.querySelector('#filter-genre').value = 'all';
   renderProducts(allListings);
-})
+});
 
 async function init() {
   try {
