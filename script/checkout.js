@@ -7,6 +7,10 @@ function renderCart() {
 
   cart.forEach((cartItem) => {
     const product = cartItem.product;
+    if (!product || typeof product.price !== 'number') {
+      return;
+    }
+
     subtotalCents += product.price * 100 * cartItem.quantity;
 
     cartHTML += `
@@ -55,6 +59,8 @@ function setupDeleteButtons() {
   document.querySelectorAll('.js-delete-link').forEach((link) => {
     link.addEventListener('click', () => {
       const productId = link.dataset.productId;
+
+      // Make sure the ID is found and removed properly
       removeFromCart(productId);
 
       const container = document.querySelector(`.js-cart-item-container-${productId}`);

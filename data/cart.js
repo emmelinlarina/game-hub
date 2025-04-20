@@ -1,39 +1,31 @@
 export let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
-// Save cart to localStorage
 function saveToStorage() {
   localStorage.setItem('cart', JSON.stringify(cart));
 }
 
-// Add product object to cart
 export function addToCart(product) {
-  if (!product || !product.id) {
-    console.error('Invalid product passed to addToCart:', product);
-    return;
-  }
-
-  let matchingItem;
-
-  cart.forEach((cartItem) => {
-    if (cartItem.product && product.id === cartItem.product.id) {
-      matchingItem = cartItem;
-    }
-  });
+  let matchingItem = cart.find((item) => item.product?.id === product.id);
 
   if (matchingItem) {
     matchingItem.quantity += 1;
   } else {
-    cart.push({
-      product: product,
-      quantity: 1
-    });
+    cart.push({ product, quantity: 1 });
   }
 
   saveToStorage();
 }
 
-// Remove product from cart by ID
 export function removeFromCart(productId) {
-  cart = cart.filter(cartItem => cartItem.product?.id !== productId);
-  saveToStorage();
+  const itemIndex = cart.findIndex((cartItem) => cartItem.product.id === productId);
+
+  if (itemIndex !== -1) {
+    if (cart[itemIndex].quantity > 1) {
+      cart[itemIndex].quantity -= 1;
+    } else {
+      cart.splice(itemIndex, 1); // remove the whole item if quantity is 1
+    }
+
+    saveToStorage();
+  }
 }

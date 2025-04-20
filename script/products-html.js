@@ -29,27 +29,26 @@ async function renderProducts(filteredListings = allListings) {
 }
 
 function setupAddToCartButtons() {
-  document.querySelectorAll('.js-add-to-cart')
-    .forEach((button) => {
-      button.addEventListener('click', () => {
-        const productId = button.dataset.productId;
-        const product = allListings.find(p => p.id === productId);
-        console.log('Clicked ID:', productId);
-        console.log('Matched Product:', product);
-        if (!product) {
-          console.error('Product not found for ID:', productId);
-          return;
-        }
-        addToCart(product);
-        updateCartQuantity();
-      });
+  document.querySelectorAll('.js-add-to-cart').forEach((button) => {
+    button.addEventListener('click', () => {
+      const productId = button.dataset.productId;
+      const product = allListings.find((p) => p.id === productId);
+
+      if (!product) {
+        console.error('Product not found for ID:', productId);
+        return;
+      }
+
+      addToCart(product);
+      updateCartQuantity();
     });
+  });
 }
 
 function updateCartQuantity() {
   let cartQuantity = 0;
-  cart.forEach((cartItem) => {
-    cartQuantity += cartItem.quantity;
+  cart.forEach((item) => {
+    cartQuantity += item.quantity;
   });
 
   document.querySelector('.js-cart-quantity').innerHTML = cartQuantity;
@@ -60,15 +59,15 @@ function setupFilters() {
   const genreFilter = document.querySelector('#filter-genre');
 
   priceSort.addEventListener('change', () => {
-    const sorted = [...allListings].sort((a, b) => {
-      return priceSort.value === 'low' ? a.price - b.price : b.price - a.price;
-    });
+    const sorted = [...allListings].sort((a, b) =>
+      priceSort.value === 'low' ? a.price - b.price : b.price - a.price
+    );
     renderProducts(sorted);
   });
 
   genreFilter.addEventListener('change', () => {
-    const filtered = allListings.filter(product => 
-      genreFilter.value === 'all' || product.genre.toLowerCase() === genreFilter.value.toLowerCase()
+    const filtered = allListings.filter((product) =>
+      genreFilter.value === 'all' || product.genre?.toLowerCase() === genreFilter.value.toLowerCase()
     );
     renderProducts(filtered);
   });
@@ -93,6 +92,10 @@ async function init() {
 
     renderProducts();
     setupFilters();
+
+    // 👇 THIS is what makes it remember how many items are in cart when loading the page
+    updateCartQuantity();
+
   } catch (error) {
     console.error('Failed to fetch listings:', error);
     document.querySelector('.js-row-1').innerHTML = `<p>Sorry, something went wrong while loading products.</p>`;
