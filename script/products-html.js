@@ -13,7 +13,9 @@ async function renderProducts(filteredListings = allListings) {
 
     productsHTML += `
       <div class="col-1">
+        <a href="product.html?id=${product.id}">
         <img src="${imageUrl}" alt="${imageAlt}" />
+        </a>
         <h4>${product.title}</h4>
         <p>$${formatCurrency(product.price * 100)}</p>
         <p class="genre">${product.genre || 'Unknown Genre'}</p>
