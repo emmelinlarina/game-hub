@@ -1,5 +1,5 @@
 import { fetchListings } from './api/listings.js';
-import { addToCart, cart, removeFromCart } from '../data/cart.js';
+import { addToCart, cart } from '../data/cart.js';
 import { formatCurrency } from './utils/money.js';
 
 function updateCartQuantity() {
@@ -26,15 +26,15 @@ function updateCartQuantity() {
 
         homeProductsHTML += `
             <div class="column">
-                    
-                <img src="${imageUrl}" alt="${imageAlt}">
-                    
-                    <h2>${product.title}</h2>
-                    <p>$${formatCurrency(product.price * 100)}</p>
-                    
-                    <button class="btn js-add-to-cart" data-product-id="${product.id}">
-                        <i class="fa-solid fa-cart-shopping"></i>
-                    </button>
+                <a href="product.html?id=${product.id}">
+                <img src="${imageUrl}" alt="${imageAlt}" />
+                </a>
+                <h2>${product.title}</h2>
+                <p>$${formatCurrency(product.price * 100)}</p>
+                
+                <button class="btn js-add-to-cart" data-product-id="${product.id}">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                </button>
                 </div>
             `;
         });
