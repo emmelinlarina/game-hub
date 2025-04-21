@@ -83,7 +83,7 @@ async function init() {
   try {
     allListings = await fetchListings();
 
-    // Populate genre filter dropdown
+    
     const genres = [...new Set(allListings.map(item => item.genre).filter(Boolean))];
     const genreFilter = document.querySelector('#filter-genre');
     genreFilter.innerHTML += genres.map(genre =>
@@ -93,7 +93,6 @@ async function init() {
     renderProducts();
     setupFilters();
 
-    // 👇 THIS is what makes it remember how many items are in cart when loading the page
     updateCartQuantity();
 
   } catch (error) {
