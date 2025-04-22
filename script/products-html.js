@@ -2,6 +2,14 @@ import { fetchListings } from './api/listings.js';
 import { cart, addToCart } from '../data/cart.js';
 import { formatCurrency } from './utils/money.js';
 
+document.body.classList.add('loading');
+
+function hideLoader() {
+  document.getElementById('page-loader').style.display = 'none';
+  document.body.classList.remove('loading');
+  window.scrollTo(0, 0);
+}
+
 let allListings = [];
 
 async function renderProducts(filteredListings = allListings) {
@@ -94,12 +102,13 @@ async function init() {
 
     renderProducts();
     setupFilters();
-
     updateCartQuantity();
 
   } catch (error) {
     console.error('Failed to fetch listings:', error);
     document.querySelector('.js-row-1').innerHTML = `<p>Sorry, something went wrong while loading products.</p>`;
+  } finally {
+    hideLoader();
   }
 }
 

@@ -1,6 +1,14 @@
 import { addToCart, updateCartQuantity } from "../data/cart.js";
 import { formatCurrency } from './utils/money.js';
 
+document.body.classList.add('loading');
+
+function hideLoader() {
+  document.getElementById('page-loader').style.display = 'none';
+  document.body.classList.remove('loading');
+  window.scrollTo(0, 0);
+}
+
 const productContainer = document.querySelector('.js-product-detail');
 const titleElement = document.querySelector('title')
 
@@ -51,6 +59,8 @@ async function initProductPage() {
     }
     const product = await fetchingSingleProduct(id);
     renderProducts(product);
+    hideLoader(); 
 }
+
 
 initProductPage();
