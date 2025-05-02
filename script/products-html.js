@@ -2,6 +2,9 @@ import { fetchListings } from './api/listings.js';
 import { cart, addToCart } from '../data/cart.js';
 import { formatCurrency } from './utils/money.js';
 
+let allListings = [];
+let currentGenre = 'all';
+
 document.body.classList.add('loading');
 
 function hideLoader() {
@@ -9,8 +12,6 @@ function hideLoader() {
   document.body.classList.remove('loading');
   window.scrollTo(0, 0);
 }
-
-let allListings = [];
 
 async function renderProducts(filteredListings = allListings) {
   let productsHTML = '';
@@ -26,7 +27,6 @@ async function renderProducts(filteredListings = allListings) {
         </a>
         <h4>${product.title}</h4>
         <p>$${formatCurrency(product.price * 100)}</p>
-        <p class="genre">${product.genre || 'Unknown Genre'}</p>
         <button class="btn js-add-to-cart" data-product-id="${product.id}">
           <i class="fa-solid fa-cart-shopping"></i>
         </button>
@@ -76,6 +76,7 @@ function setupFilters() {
   });
 
   genreFilter.addEventListener('change', () => {
+    currentGenre = genreFilter.value;
     const filtered = allListings.filter((product) =>
       genreFilter.value === 'all' || product.genre?.toLowerCase() === genreFilter.value.toLowerCase()
     );
@@ -86,6 +87,7 @@ function setupFilters() {
 document.querySelector('#reset-filters').addEventListener('click', () => {
   document.querySelector('#sort-price').value = 'default';
   document.querySelector('#filter-genre').value = 'all';
+  currentGenre = 'all';
   renderProducts(allListings);
 });
 
