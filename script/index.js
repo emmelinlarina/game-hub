@@ -47,7 +47,7 @@ async function renderHomepageProducts() {
     setupAddToCartButtons(listings);
     updateCartQuantity();
   } catch (err) {
-    bestSellers.innerHTML = `<p>⚠️ Failed to load products</p>`;
+    bestSellers.innerHTML = `<p>⚠️Failed to load products</p>`;
     console.error('Failed to fetch', err);
   }
 }

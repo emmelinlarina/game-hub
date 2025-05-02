@@ -23,7 +23,7 @@ export function removeFromCart(productId) {
     if (cart[itemIndex].quantity > 1) {
       cart[itemIndex].quantity -= 1;
     } else {
-      cart.splice(itemIndex, 1); // remove the whole item if quantity is 1
+      cart.splice(itemIndex, 1);
     }
 
     saveToStorage();

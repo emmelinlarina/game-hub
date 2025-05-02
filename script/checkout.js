@@ -68,7 +68,7 @@ function setupDeleteButtons() {
     link.addEventListener('click', () => {
       const productId = link.dataset.productId;
 
-      // Make sure the ID is found and removed properly
+      
       removeFromCart(productId);
 
       const container = document.querySelector(`.js-cart-item-container-${productId}`);
