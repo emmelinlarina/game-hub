@@ -178,6 +178,12 @@ header {
 
 /* BUTTON */
 
+li, a, i, button {
+    font-size: 1rem;
+    color: white;
+    text-decoration: none;
+}
+
 
 button {
     background-color: #1e74cf;
