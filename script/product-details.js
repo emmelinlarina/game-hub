@@ -59,6 +59,7 @@ async function initProductPage() {
     }
     const product = await fetchingSingleProduct(id);
     renderProducts(product);
+    updateCartQuantity();
     hideLoader(); 
 }
 

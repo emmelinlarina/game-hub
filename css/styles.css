@@ -149,16 +149,17 @@ header {
 
 
 
-.column p, .column i {
+.column p {
     margin-top: 10px;
     font-size: 1.2rem;
-    margin-bottom: 15px;
+    margin-bottom: 12px;
 }
 
 .column i {
+    padding: 5.5px 5px;
     cursor: pointer;
-    color: #568cc9;
-    font-size: 1.6rem;
+    color: #ffffff;
+    font-size: 1.4rem;
 }
 
 .column h2 {
@@ -176,6 +177,15 @@ header {
 
 
 /* BUTTON */
+
+
+button {
+    background-color: #1e74cf;
+    padding: 2.5px 15px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
 
 .pre {
     cursor: pointer;

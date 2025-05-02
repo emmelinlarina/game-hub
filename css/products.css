@@ -146,6 +146,7 @@ header {
    
 }
 
+
 button {
     background-color: #1e74cf;
     padding: 5px 10px;
@@ -153,6 +154,17 @@ button {
     border-radius: 4px;
     cursor: pointer;
 }
+
+.filters {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 40px auto;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
 
 
 /* FOOTER */

@@ -10,13 +10,13 @@ function hideLoader() {
 }
 
 function renderCart() { 
-        listContainer.appendChild(item);
+ 
 };
     
 
-    function init() {
-    hideLoader();
-    renderCart();
-    }
+  function init() {
+  hideLoader();
+  renderCart();
+  }
 
-    init();
+init();
