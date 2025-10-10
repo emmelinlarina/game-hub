@@ -38,11 +38,11 @@
 .about-content p {
     line-height: 22px;
     margin-bottom: 25px;
+    font-weight: 300;
 }
 
 .contact {
     cursor: pointer;
-    font-weight: 100;
     font-size: 1.25rem;
     background-color: #142d5a;
     border: none;
