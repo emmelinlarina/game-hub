@@ -2,7 +2,7 @@
 
 ![Gamehub logo](images/logo/gamehub_logo.png)
 
-#### Javascript 1 Course Assignment
+#### Javascript 1 Course Assignment & Course Assignment
 
 An interactive online game store built as my **JavaScript Course Assignment** at Noroff.  
 The site fetches products dynamically from the **Noroff GameHub API**, allowing users to browse, filter, and purchase games.
@@ -91,7 +91,6 @@ The goal was to replace hardcoded product data with a fully functional API-drive
 - [Mimo App](https://mimo.org)
 - [W3Schools](https://www.w3schools.com/js/)
 - [Programming with Mosh](http://www.youtube.com/@programmingwithmosh)
-- [ChatGPT](https://openai.com) – for clarifications & idea generation
 
 ## Author
 
