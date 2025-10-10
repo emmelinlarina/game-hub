@@ -31,14 +31,11 @@
     background-color: #3d6694;
     border-radius: 8px;
     margin: 40px 0 40px;
-
     display: flex;
     justify-content: center;
 }
 
-.column h2 {
-    margin-bottom: 20px;
-}
+.column h2 { margin-bottom: 20px; }
 
 .column i {
     padding: 5.5px 5px;
@@ -55,17 +52,9 @@ button {
     cursor: pointer;
 }
 
-button:hover {
-    background-color: #257ff5;
+button:hover { background-color: #257ff5; }
 
-}
-
-
-
-hr {
-    border-color: rgb(209, 209, 209);
-    opacity: 10%;
-}
+hr { border-color: rgb(209, 209, 209); opacity: 10%; }
 
 .column-1 {
     display: flex;
@@ -77,145 +66,8 @@ hr {
     line-height: 20px;
 }
 
-
-
 .column-1 li {
     font-size: 1rem;
     font-family:sans-serif;
     line-height: 25px;
-}
-
-
-
-/* FOOTER */
-
-footer {
-    width: 100%;
-    bottom: 0;
-    padding: 10px 5px;
-    border: 125px;
-    font-size: 0.8rem;
-    line-height: 18px;
-    background: linear-gradient(to right, #568cc9, #1d346b);
-}
-
-.row {
-    width: 85%;
-    margin: auto;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: flex-start;
-    justify-content: space-between;
-    
-}
-
-.col img {
-    max-width: 100%;
-    width: 150px;
-    margin-bottom: 10px; 
-}
-
-col {
-    flex-basis: 15%;
-    padding: 10px;
-} 
-
-.col h4 {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    
-} 
-
-.col h3 {
-    
-    margin-bottom: 15px;
-    margin-top: 10px;
-    position: relative;
-}
-
-.col h5 {
-    font-size: 0.8rem;
-    margin-top: 20px;
-    letter-spacing: 1px;
-}
-
-.col ul li {
-    list-style: none;
-    line-height: 20px;
-    font-weight: 100;
-    font-size: 0.5rem;
-}
-
-form {
-    padding-bottom: 10px;
-    display: flex;
-    border-bottom: 1px solid rgb(131, 150, 189);
-    margin-bottom: 10px;
-    
-}
-
-form input {
-
-    padding: 0 5px;
-    background: transparent;
-    border: 0;
-}
-
-form button {
-    background: transparent;
-    border: 0;
-    padding: 2.5px;
-    opacity: 50%;
-}
-
-@media screen and (max-width: 768px) {
-    /* nav */
-
-   header img {
-       width: 80px;
-   }
-
-   header {
-       justify-content: center;
-       text-align: center;
-       gap: 20px;
-       font-size: 2rem;
-   }
-
-   
-   .menu {
-    padding: 5px;
-   }
-
-   .menu li {
-       display: flex;
-       flex-direction: column;
-       justify-content: center;
-       text-align: center;
-   
-       padding: 5px;
-       gap: 20px;
-   }
-
-   .menu a {
-       font-size: 1.6rem;
-       background-color: #182747;
-       border-radius: 8px;
-       padding: 2px;
-   }
-
-   .menu i {
-       flex-direction: row;
-        font-size: 2rem;
-   }
-
-   .column h1 {
-    font-size: 1.5rem;
-   }
-   
-   input[type=email]::placeholder {
-    color: rgb(199, 199, 199);
-}
-
 }

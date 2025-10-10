@@ -182,45 +182,6 @@ footer {
 }
 
 @media screen and (max-width: 768px) {
-    /* nav */
-
-   header img {
-       width: 80px;
-   }
-
-   header {
-       justify-content: center;
-       text-align: center;
-       gap: 20px;
-       font-size: 2rem;
-   }
-
-   
-   .menu {
-    padding: 5px;
-   }
-
-   .menu li {
-       display: flex;
-       flex-direction: column;
-       justify-content: center;
-       text-align: center;
-   
-       padding: 5px;
-       gap: 20px;
-   }
-
-   .menu a {
-       font-size: 1.6rem;
-       background-color: #182747;
-       border-radius: 8px;
-       padding: 2px;
-   }
-
-   .menu i {
-       flex-direction: row;
-        font-size: 2rem;
-   }
 
    input[type=email]::placeholder {
     color: rgb(199, 199, 199);
@@ -228,29 +189,11 @@ footer {
 
 /* MAIN */
 
+.returncart { margin: 50px 10px 10px; }
+.returncart h1 { font-size: 2rem; }
 
-.returncart {
-    
-        margin: 50px 10px 10px;
-}
-
-.returncart h1 {
-    font-size: 2rem;
-   
-}
-
-
-.list {
-    font-size: 1.25rem;
-
-}
-
-.list img {
-    max-width: 125px;
-}
-
-
-
+.list { font-size: 1.25rem; }
+.list img { max-width: 125px; }
 
 .right {
     display: flex;
@@ -262,13 +205,9 @@ footer {
     padding: 5px;
 }
 
-.right h1 {
-    margin-top: 10px;
-}
+.right h1 { margin-top: 10px; }
 
-.form {
-   padding: 30px;
-}
+.form { padding: 30px; }
 
 .group input {
    box-sizing: border-box;
@@ -283,11 +222,7 @@ footer {
     padding: 20px 80px;
 }
 
-.buttoncheckout a {
-    font-size: 1.4rem;
-    
-}
-
+.buttoncheckout a { font-size: 1.4rem; }
 
 }
 

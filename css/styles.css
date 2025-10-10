@@ -1,5 +1,3 @@
-
-
 /* best sellers */
 
 .banner {
@@ -31,7 +29,6 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    
     padding: 20px;
     gap: 100px;
     max-width: 1200px;
@@ -52,8 +49,6 @@
     align-items: center;
 }
 
-
-
 .column p {
     margin-top: 10px;
     font-size: 1.2rem;
@@ -72,15 +67,6 @@
     margin-top: 10px;
 }
 
-/* MEDIA CONTAINER */
-
-
-
-
-
-
-
-
 /* BUTTON */
 
 li, a, i, button {
@@ -88,7 +74,6 @@ li, a, i, button {
     color: white;
     text-decoration: none;
 }
-
 
 button {
     background-color: #1e74cf;
@@ -114,6 +99,12 @@ button {
 
 /* DISCOVER MORE */
 
+.discover button, .marketplace-btn, .marketplace a {
+    cursor: pointer;
+    background-color: #1B203C;
+    border: thin solid #1B203C;
+}
+
 .discover {
     display: flex;
     justify-content: flex-end;
@@ -121,59 +112,36 @@ button {
 }
 
 .discover button {
-    cursor: pointer;
     font-size: 0.8rem;
-    font-weight: thin;
-    background-color: #1B203C;
     padding: 2px 20px;
-    border-width: thin;
     border-radius: 5px;
-    border: solid #1B203C;
-
     margin: 20px;
 }
-
-
 
 /* MARKETPLACE */
 
 .marketplace-btn, .marketplace a {
-    cursor: pointer;
     font-size: 1.8rem;
-    font-weight: thin;
-    background-color: #1B203C;
     padding: 5px 20px;
-    border-width: thin;
     border-radius: 10px;
-    border: solid #1B203C;
-
     margin: 80px;
+    letter-spacing: 5px;
 }
 
-.universe {
+.universe, .how {
     display: flex;
-    flex-direction: column ;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: 20px;
 }
 
-.universe h1 {
-    font-size: 2rem;
-    padding: 10px;
-}
+.universe h1 { font-size: 2rem; padding: 10px; }
+.universe h2 { font-size: 1.2rem; }
 
-.universe h2 {
-    font-size: 1.2rem;
-}
-
-.marketplace img {
-    width: 15%;
-}
+.marketplace img { width: 15%; }
 
 /* PARAGRAPH */
-
-
 
 .paragraph img {
     width: 100%;
@@ -184,23 +152,10 @@ button {
     padding: 20px;
 }
 
-.how {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 15px;
-    margin: 0 0 40px;
-}
+.how { gap: 15px; margin: 0 0 40px; }
 
-.how p {
-    line-height: 25px;
-    padding: 20px;
-}
-
-.how h1 {
-    font-size: 1.6rem;
-}
+.how h1 { font-size: 1.6rem; }
+.how p { line-height: 25px; padding: 20px; }
 
 .signup {
     display: flex;
@@ -216,7 +171,6 @@ button {
     line-height: 30px;
     font-size: 1.25rem;
 }
-
 
 /* FOOTER */
 
@@ -237,7 +191,6 @@ footer {
     flex-wrap: wrap;
     align-items: flex-start;
     justify-content: space-between;
-    
 }
 
 .col img {
@@ -255,11 +208,9 @@ col {
     display: flex;
     align-items: center;
     justify-content: center;
-    
 } 
 
 .col h3 {
-    
     margin-bottom: 15px;
     margin-top: 10px;
     position: relative;
@@ -283,11 +234,9 @@ form {
     display: flex;
     border-bottom: 1px solid rgb(131, 150, 189);
     margin-bottom: 10px;
-    
 }
 
 form input {
-
     padding: 0 5px;
     background: transparent;
     border: 0;
@@ -304,71 +253,26 @@ form button {
 /*mobile / tablet */
 
 @media screen and (max-width: 768px) {
-     /* nav */
-
-    header img {
-        width: 80px;
-    }
-
-    header {
-        justify-content: center;
-        text-align: center;
-        gap: 20px;
-        font-size: 2rem;
-    }
-
-
-    .menu li {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        text-align: center;
-    
-        padding: 5px;
-        gap: 20px;
-    }
-
-    .menu a {
-        font-size: 1.5rem;
-        background-color: #182747;
-        border-radius: 8px;
-        padding: 2px;
-    }
-
-    .menu i {
-        flex-direction: row;
-         font-size: 2rem;
-    }
 
     /* banner img */
-
-
     .banner-img {
          max-width: 100px;
          height: 50%;
         width: 50%;
-     }
-
+    }
 
     /* games */
-
     .container {
         display: flex;
         flex-direction: column;
         gap: 20px;
     }
-
-
     .column img {
         width: 100%;
         max-width: 350px;
     }
 
-    .column h2 {
-        font-size: 2rem;
-    }
-
-
+    .column h2 { font-size: 2rem; }
 
     /*DISCOVER*/
 
@@ -379,80 +283,27 @@ form button {
     }
 
     /*MARKETPLACE*/
-
-    .universe h1 {
-        text-align: center;
-    }
+    .universe h1 { text-align: center; }
 
     .marketplace-btn, .marketplace a {
         font-size: 1.8rem;
         padding: 5px 5px;
     }
-
-    /* signup */
-
-    .signup {
-        padding: 40px;
-    }
-
-    /* FOOTER */
-
-    .row {
-        padding: 20px;
-        gap: 20px;
-    }
-
-    input[type=email]::placeholder {
-        color: rgb(199, 199, 199);
-    }
-}
-
-/* Laptop */
-
-@media screen and (max-width: 1024px) {
-    
 }
 
 /* 4k desktop */
 
 @media screen and (max-width: 2560px) {
     
-    /* NAV */
-
-   header {
-    padding: 15px;
-   }
-
-   menu li a {
-    font-size: 1rem;
-   }
-
-   .banner img {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0;
-    width: 100%;
-   }
-
-
  /* Best sellers */
 
-   .bs h1 {
-    font-size: 1.8rem;
-    
-   }
-
-   .container img {
-    max-width: 300px;
-   }
+   .bs h1 { font-size: 1.8rem; }
+   .container img { max-width: 300px; }
 
  /* DISCOVER */
 
-   .discover button {
-    font-size: 1rem;
-   }
-
+   .discover button { font-size: 1rem; }
+    .signup { padding: 40px; }
 }
 
 
