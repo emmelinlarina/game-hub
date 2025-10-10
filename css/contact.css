@@ -1,151 +1,79 @@
-
 /* MAIN */
-
 .container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  display: flex; flex-direction: column; justify-content: center; align-items: center; margin-bottom: 200px;
 }
 
-.returncart {
-    padding: 20px 0 50px 0;
-}
-
+.returncart { padding: 20px 0 50px; }
 .returncart h1 {
-    padding: 10px 10px;
-    margin: 20px;
-    text-align: center;
-    background-color: #1d346b;
+  padding: 10px; margin: 20px; text-align: center; background-color: #1d346b; border-radius: 8px;
 }
 
-li {
-    font-size: 1.1rem;
-    line-height: 30px;
+li { font-size: 1.1rem; line-height: 30px; }
+
+p {
+    margin-top: 5px;
 }
 
 .right {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin: 50px auto;
-    padding: 30px;
-    width: 100%;
-    max-width: 500px;
-    background-color: #1B203C;
-    border-radius: 10px;
-    text-align: center;
-}
-
-.right p {
-    padding: 5px 0 20px;
-}
-
-.right h1 {
-    font-size: 1.5rem;
-    margin-bottom: 20px;
-}
-
-.right div {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    margin: 10px 30px;
-    background-color: #1d346b;
-    border-radius: 5px;
-}
-
-
-.right i {
-    font-size: 1rem;
-    margin-bottom: 5px;
-    color: #f7f7f7;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  margin: 50px auto; padding: 28px;
+  width: 100%; max-width: 600px;
+  background-color: #1d3772; border-radius: 12px; text-align: center;
+  box-shadow: 0 6px 14px rgba(0,0,0,.15);
 }
 
 .form {
-    display: flex;
-    flex-wrap: wrap;
-    padding: 5px 0;
-    justify-content: space-between;
-    
+  display: flex; flex-direction: column; gap: 15px; width: 100%;
 }
 
-.form input {
-    background-color: #344d92;
-    width: 100%;
-    padding: 10px 50px;
-    border-radius: 5px;
-    border-style: none;
-}
-
-
-.form textarea {
-    background-color: #344d92;
-    width: 100%;
-    padding: 50px 50px;
-    border-radius: 5px;
-    border-style: none;
-}
-
+.form input,
+.form textarea,
 textarea {
-   resize: none;
-   padding: 10px 2px 80px;
-   border: none;
-   border-radius: 8px;
-   background-color: #344d92;
+  width: 100%;
+  background-color: #344d92; color: #fff;
+  border: 1px solid transparent; border-radius: 8px;
+  padding: 12px 14px; font: inherit; outline: none;
+}
+
+.form input::placeholder,
+.form textarea::placeholder {
+    color: #dadada;
+}
+
+.form input#name {
+    margin-top: 20px;
+}
+
+.form textarea,
+textarea { min-height: 140px; resize: vertical; }
+
+.form input:focus,
+.form textarea:focus { border-color: #91b3f1; box-shadow: 0 0 0 2px rgba(145,179,241,.35); }
+
+.group {
+    text-align: left;
+}
+
+.form label {
+    display: block;
+    margin-bottom: 5px;
 }
 
 .buttoncheckout {
-
-    cursor: pointer;
-    font-weight: 100;
-    background-color: #245388;
-    color: rgb(221, 221, 221);
-    border: none;
-    border-width: none;
-    border-radius: 10px;
-    padding: 10px 30px;
-    margin-top: 10px;
+  cursor: pointer; font-weight: 500;
+  font-size: 1.5rem;
+color: #fff;
+  border: 2px; border-radius: 10px;
+  padding: 12px 28px; margin-top: 12px;
+  transition: transform .06s ease-in-out, filter .15s ease-in-out;
+  opacity: 100%;
 }
 
+.buttoncheckout:hover { filter: brightness(1.06); }
+.buttoncheckout:active { transform: translateY(1px); }
 
-@media screen and (max-width: 768px) {
 
-   input[type=email]::placeholder {
-    color: rgb(199, 199, 199);
-}
-
-.returncart {
-    padding: 10px;
-    margin: 0 auto;
-    align-items: center;
-    justify-content: center;
-    text-align: left;
-    margin-bottom: 50px;
-}
-
-.returncart li {
-    font-size: 1.5rem;
-    line-height: 40px;
-}
-
-.right {
-   margin: 0 0 100px;
-   padding: 0;
-}
-
-.right p { 
-    padding: 10px;
-    text-align: center;
-    font-size: 1.2rem;
-}
-
-.form {
-   margin: 0;
-   padding: 0;
-}
-
+@media (max-width: 768px) {
+  .right { margin: 0 0 100px; padding: 16px; }
+  .right p { padding: 8px 0 12px; font-size: 1.05rem; }
 }
