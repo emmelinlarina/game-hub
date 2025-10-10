@@ -154,21 +154,11 @@
 /* FOOTER */
 
 footer {
-    width: 100%;
-    padding: 10px 5px;
     font-size: 0.9rem;
-    line-height: 18px;
-    background: linear-gradient(to right, #568cc9, #1d346b);
 }
 
 .row {
     width: 90%;
-    margin: auto;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: flex-start;
-    justify-content: space-between;
-    
 }
 
 .col img {
