@@ -6,7 +6,7 @@
     <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="This page is for getting information and to contact us">
+    <meta name="description" content="Get information and contact GameHub support">
     <script src="https://kit.fontawesome.com/e0e8f3b90b.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/contact.css">
 
@@ -32,14 +32,14 @@
         </nav>
     </header>
 
-    <div id="page-loader">
+    <div id="page-loader" role="status" aria-live="polite">
         <div class="spinner"></div>
     </div>
 
     <main>
         <div class="container">
             <div class="checkoutlayout">
-                <div class="returncart">
+                <section class="returncart">
                     <h1>CONTACT US</h1>
                     <div class="list">
                         <div class="item">
@@ -55,33 +55,36 @@
                             <div class="returnprice"></div>
                         </div>
                     </div>
-                </div>
-                <div class="right">
-                    <h1>QUICK CONTACT</h1>
+                </section>
+
+                <section class="right" aria-labelledby="quick-contact-title">
+                    <h1 id="quick-contact-title">QUICK CONTACT</h1>
                     <p>Do you have questions of feedback for us? </p>
                     <p>Send us a message and we'll be happy to help you.</p>
-                    <div class="form">
+
+                    <form class="form" novalidate>
                         <div class="group">
                             <label for="Name *">Enter your name</label>
-                            <input type="text" name="" id="">
+                            <input id="name" name="name" type="text" autocomplete="name" placeholder="Your name">
                         </div>
                         <div class="group">
                             <label for="Email *">Email</label>
-                            <input type="text" name="" id="">
+                            <input id="email" name="email" type="email" autocomplete="email"
+                                placeholder="you@example.com">
                         </div>
                         <div class="group">
                             <label for="Subject *">Subject</label>
-                            <input type="text" name="" id="">
+                            <input id="subject" name="subject" type="text" placeholder="How can we help?">
                         </div>
                         <div class="group">
                             <label for="Message *">Message</label>
-                            <textarea id="message" name="message"></textarea>
+                            <textarea id="message" name="message" rows="6"
+                                placeholder="Write your message here"></textarea>
                         </div>
-                    </div>
-                    <button class="buttoncheckout">
-                        <a href="">SEND</a>
-                    </button>
-                </div>
+
+                        <button class="buttoncheckout" type="submit">SEND</button>
+                    </form>
+                </section>
             </div>
         </div>
 

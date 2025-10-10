@@ -30,7 +30,7 @@
         </nav>
     </header>
 
-    <div id="page-loader">
+    <div id="page-loader" role="status" aria-live="polite">
         <div class="spinner"></div>
     </div>
 
@@ -42,8 +42,8 @@
                     <hr>
                     <h1>PAYMENT</h1>
                 </div>
-                <div class="list">
-                    <img src="">
+
+                <div class="list" aria-live="polite">
                     <div class="info">
                         <div class="name"></div>
                         <div class="price"></div>
@@ -52,47 +52,48 @@
                     <div class="returnprice"></div>
                 </div>
 
-
-
                 <div class="right">
                     <h1>Please select a payment method:</h1>
                     <div>
-                        <i class="fa-brands fa-paypal"></i>
-                        <i class="fa-brands fa-cc-visa"></i>
-                        <i class="fa-brands fa-google-pay"></i>
-                        <i class="fa-brands fa-cc-mastercard"></i>
+                        <li aria-hidden="true"><i class="fa-brands fa-paypal"></i></li>
+                        <li aria-hidden="true"><i class="fa-brands fa-cc-visa"></i></li>
+                        <li aria-hidden="true"><i class="fa-brands fa-google-pay"></i></li>
+                        <li aria-hidden="true"><i class="fa-brands fa-cc-mastercard"></i></li>
                     </div>
 
-                    <div class="form">
+                    <form class="form" novalidate>
                         <div class="group">
                             <label for="Card number">Card number</label>
-                            <input type="text" name="" id="">
+                            <input type="text" name="card-number" id="card-number" inputmode="numeric"
+                                autocomplete="cc-number" placeholder="1234 4567 4321 7654">
                         </div>
                         <div class="group">
-                            <label for="Expiration date">Expiration date</label>
-                            <input type="text" name="" id="">
+                            <label for="exp-date">Expiration date</label>
+                            <input type="text" name="exp-date" id="exp-date" inputmode="numeric" autocomplete="cc-exp"
+                                placeholder="MM/YY">
                         </div>
                         <div class="group">
-                            <label for="CVV">CVV</label>
-                            <input type="text" name="" id="">
+                            <label for="cvv">CVV</label>
+                            <input id="cvv" name="cvv" inputmode="numeric" autocomplete="cc-csc" placeholder="123">
                         </div>
                         <div class="group">
-                            <label for="Cardholder name">Cardholder name</label>
-                            <input type="text" name="" id="">
+                            <label for="cardholder">Cardholder name</label>
+                            <input id="cardholder" name="cardholder" autocomplete="cc-name" placeholder="Full name">
                         </div>
                         <div class="group">
-                            <label for="Email">Email</label>
-                            <input type="text" name="" id="">
+                            <label for="email">Email</label>
+                            <input id="email" name="email" type="email" autocomplete="email"
+                                placeholder="you@example.com">
                             <p>We will send the receipt to your email</p>
                         </div>
-                    </div>
-                    <div class="return">
-                        <div class="row">
+                    </form>
 
-                        </div>
+                    <div class="return" aria-live="polite">
+                        <div class="row"></div>
                     </div>
+
                     <button class="buttoncheckout">
-                        <a href="checkout-success.html">CHECKOUT</a>
+                        <a href="checkout-success.html" role="button">CHECKOUT</a>
                     </button>
                 </div>
             </div>
@@ -106,11 +107,11 @@
             </div>
             <div class="col">
                 <p>EASY AND SECURE PAYMENTS</p>
-                <div class="social-icons">
-                    <i class="fa-brands fa-paypal"></i>
-                    <i class="fa-brands fa-cc-visa"></i>
-                    <i class="fa-brands fa-google-pay"></i>
-                    <i class="fa-brands fa-cc-mastercard"></i>
+                <div class="social-icons" aria-label="Payment options">
+                    <i class="fa-brands fa-paypal" aria-hidden="true"></i>
+                    <i class="fa-brands fa-cc-visa" aria-hidden="true"></i>
+                    <i class="fa-brands fa-google-pay" aria-hidden="true"></i>
+                    <i class="fa-brands fa-cc-mastercard" aria-hidden="true"></i>
                 </div>
             </div>
         </div>

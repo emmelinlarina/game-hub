@@ -6,7 +6,7 @@
     <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="This page is to show that the payment was successfull">
+    <meta name="description" content="Your payment was successful on GameHub">
     <script src="https://kit.fontawesome.com/e0e8f3b90b.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/checkout-success.css">
 
@@ -30,7 +30,7 @@
         </nav>
     </header>
 
-    <div id="page-loader">
+    <div id="page-loader" role="status" aria-live="polite">
         <div class="spinner"></div>
     </div>
 
@@ -40,12 +40,10 @@
                 <h1>THANK YOU</h1>
                 <div class="box">
                     <div class="content">
-                        <i class="fa-solid fa-circle-check"></i>
+                        <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
                         <h3>YOUR PAYMENT WAS SUCCESSFUL</h3>
                         <hr>
-                        <button class="button">
-                            <a href="index.html">HOME PAGE</a>
-                        </button>
+                        <a class="button" href="index.html">HOME PAGE</a>
                     </div>
                 </div>
             </div>
