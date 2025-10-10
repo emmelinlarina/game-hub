@@ -1,6 +1,6 @@
 # GameHub
 
-![Gamehub logo](images\logo\gamehub_logo.png)
+![Gamehub logo](images/logo/gamehub_logo.png)
 
 #### Javascript 1 Course Assignment
 
