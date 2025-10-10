@@ -81,13 +81,6 @@ li {
     border-style: none;
 }
 
-.form {
-    display: flex;
-    flex-wrap: wrap;
-    padding: 5px 0;
-    justify-content: space-between;
-}
-
 .form textarea {
     background-color: #344d92;
     width: 100%;
