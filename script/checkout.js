@@ -4,20 +4,23 @@ import { formatCurrency } from './utils/money.js';
 document.body.classList.add('loading');
 
 function hideLoader() {
-  document.getElementById('page-loader').style.display = 'none';
+  const loader = document.getElementById('page-loader');
+  if (loader) loader.style.display = 'none';
   document.body.classList.remove('loading');
   window.scrollTo(0, 0);
 }
 
 function renderCart() {
+  const shopContainer = document.querySelector('.js-shop');
+  const subtotalEl = document.getElementById('subtotal');
+  const totalEl = document.getElementById('total');
+
   let cartHTML = '';
   let subtotalCents = 0;
 
   cart.forEach((cartItem) => {
     const product = cartItem.product;
-    if (!product || typeof product.price !== 'number') {
-      return;
-    }
+    if (!product || typeof product.price !== 'number') return;
 
     subtotalCents += product.price * 100 * cartItem.quantity;
 
@@ -38,9 +41,6 @@ function renderCart() {
     `;
   });
 
-  const shopContainer = document.querySelector('.js-shop');
-  const rightBar = document.querySelector('.right-bar');
-
   if (cart.length === 0) {
     shopContainer.innerHTML = `
       <div class="empty-cart-message">
@@ -48,37 +48,33 @@ function renderCart() {
         <a href="products.html">Go find some games to fill it up</a>
       </div>
     `;
-    rightBar.innerHTML = ``;
-    return;
+    if (subtotalEl) subtotalEl.textContent = '$0.00';
+    if (totalEl) totalEl.textContent = '$0.00';
+  } else {
+    shopContainer.innerHTML = cartHTML;
+
+    const formatted = `$${formatCurrency(subtotalCents)}`;
+    if (subtotalEl) subtotalEl.textContent = formatted;
+    if (totalEl) totalEl.textContent = formatted;
+
+    setupDeleteButtons();
   }
-
-  shopContainer.innerHTML = cartHTML;
-  const subtotalFormatted = formatCurrency(subtotalCents);
-  rightBar.innerHTML = `
-    <p><span>Subtotal</span> <span>$${subtotalFormatted}</span></p>
-    <hr>
-    <p class="total"><span>TOTAL</span> <span>$${subtotalFormatted}</span></p>
-  `;
-
-  setupDeleteButtons();
 }
-
-updateCartQuantity();
-hideLoader();
 
 function setupDeleteButtons() {
   document.querySelectorAll('.js-delete-link').forEach((link) => {
     link.addEventListener('click', () => {
       const productId = link.dataset.productId;
-
       const container = document.querySelector(`.js-cart-item-container-${productId}`);
       if (container) container.remove();
+
       removeFromCart(productId);
       updateCartQuantity();
       renderCart();
-       
     });
-  }); 
+  });
 }
 
+updateCartQuantity();
 renderCart();
+hideLoader();
