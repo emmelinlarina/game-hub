@@ -167,10 +167,12 @@ form button {
     }
 
     header {
+        display: block;
         justify-content: center;
         text-align: center;
         gap: 20px;
         font-size: 2rem;
+        margin: 0 auto;
     }
 
     .menu li {
@@ -178,16 +180,18 @@ form button {
         flex-direction: column;
         justify-content: center;
         text-align: center;
-    
+        max-width: 220px;
         padding: 5px;
         gap: 20px;
+        margin: 0 auto;
+        font-size: 1.4rem;
     }
 
     .menu a {
         font-size: 1.5rem;
         background-color: #182747;
         border-radius: 8px;
-        padding: 2px;
+        padding: 5px;
     }
 
     .menu i {
