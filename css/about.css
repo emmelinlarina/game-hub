@@ -27,31 +27,27 @@
     padding: 20px;
     margin: 20px 0 80px;
     background-color: #1d3772;
+    border-radius: 25px;
 }
 
 .about-content h3 {
-    
-    background-color: #24488a;
-    padding: 5px;
-    margin: 5px 0;
     border-radius: 4px;
+    margin-bottom: 5px;
 }
 
 .about-content p {
-    line-height: 20px;
-    padding: 10px 0;
+    line-height: 22px;
+    margin-bottom: 25px;
 }
 
 .contact {
-    margin: 0 auto;
     cursor: pointer;
     font-weight: 100;
     font-size: 1.25rem;
     background-color: #142d5a;
     border: none;
-    padding: 5px;
-    border-radius: 2px;
-    margin: 15px 0;
+    padding: 8px;
+    border-radius: 15px;
 }
 
 @media screen and (max-width: 768px) {

@@ -73,6 +73,7 @@ li, a, i, button {
     font-size: 1rem;
     color: white;
     text-decoration: none;
+    font-weight: 500;
 }
 
 button {
